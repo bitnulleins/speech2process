@@ -8,6 +8,8 @@ The following steps is made by the tool:
 3. Generate simple EventLog for PM4PY
 4. Process Mining algorithm for BPMN creation
 
+View the [Demo](#demo) screenshot and the [research paper](#research-paper).
+
 ## Installation
 
 Get project by:
@@ -76,6 +78,10 @@ For german package:
 2. Run: ```python wsgi.py```
 
 Run app.py instead for debug mode.
+
+## Demo
+
+<img src="./demo.jpg" />
 
 ## Research paper
 
