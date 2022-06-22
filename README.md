@@ -2,11 +2,16 @@
 
 Speech*2*Process is a tool to transform natural language (by text oder audio recorded) to BPMN process (incl. EventLog). This tool is part of a research paper.
 
-The following steps is made by the tool:
+### Features
 1. Transcribe audio to text (optional)
 2. Extract tasks (events) via NLP tool spaCy
 3. Generate simple EventLog for PM4PY
 4. Process Mining algorithm for BPMN creation
+
+### Feature Requests:
+* Modus: Instance based (new) vs. Single Instance Intelligence (implemented)
+* Annotations (e.g. improvment in records)
+* New specific name 
 
 View the [Demo](#demo) screenshot and the [research paper](#research-paper).
 
