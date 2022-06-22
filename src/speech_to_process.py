@@ -139,12 +139,12 @@ class Speech2Process():
     def __export(self, activity_log, format: str = 'png') -> str:
         path = '/static/assets'
         if format == 'bpmn':
-            file = os.path.relpath(os.getcwd() + f'{path}/bpm/process.bpmn')
+            file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.bpmn')
             tree = pm4py.discover_process_tree_inductive(activity_log)
             bpmn_graph = pm4py.objects.conversion.process_tree.converter.apply(tree, variant=pm4py.objects.conversion.process_tree.converter.Variants.TO_BPMN)
             pm4py.write_bpmn(bpmn_graph, file, enable_layout=True)
         elif format == 'xes':
-            file = os.path.relpath(os.getcwd() + f'{path}/bpm/process.xes')
+            file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.xes')
             pm4py.write_xes(activity_log, file)
         else:
             file = os.path.relpath(os.getcwd() + f'{path}/images/process.png')
