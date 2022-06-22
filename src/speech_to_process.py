@@ -20,7 +20,7 @@ class Speech2Process():
     
     """
  
-    def from_audio(self, audio_files: list[str]):
+    def from_audio(self, audio_files):
         """
         
         """
@@ -29,7 +29,7 @@ class Speech2Process():
         print(" ")
         return self.from_text(text)
 
-    def from_text(self, text: list[str]):
+    def from_text(self, text):
         """
         
         """
