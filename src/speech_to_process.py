@@ -33,22 +33,22 @@ class Speech2Process():
         """
         
         """
-        event_log_df = self.__generate_event_log(self.__extract_infos(text))
+        activity_log_df = self.__generate_activity_log(self.__extract_infos(text))
         
-        event_log = pm4py.format_dataframe(
-            event_log_df.copy(),
+        activity_log = pm4py.format_dataframe(
+            activity_log_df.copy(),
             case_id='case_id',
             activity_key='activity',
             timestamp_key='timestamp'
         )
 
         # XES
-        self.__export(event_log, format='xes')
-        self.__export(event_log, format='bpmn')
-        self.__export(event_log, format='png')
+        self.__export(activity_log, format='xes')
+        self.__export(activity_log, format='bpmn')
+        self.__export(activity_log, format='png')
 
         return {
-            'event_log_html': event_log_df.to_html(index=False, justify='left')
+            'activity_log_html': activity_log_df.to_html(index=False, justify='left')
         }
 
     def __transcribe_audio(self, audio_files: list[str]):
@@ -121,34 +121,34 @@ class Speech2Process():
             
         return extracted_infos
 
-    def __generate_event_log(self, information_extraction: dict):
+    def __generate_activity_log(self, information_extraction: dict):
         """
-        Transform information extraction to event_log df
+        Transform information extraction to activity_log df
         """
-        event_log = []
+        activity_log = []
         for event in information_extraction:
-            event_log.append({
+            activity_log.append({
                 'case_id'       : event['TRACE'],
                 'activity'      : f"{event['OBJECT']} {event['VERB']}",
                 'timestamp'     : datetime.datetime.now() + datetime.timedelta(seconds=event['STEP']),
                 'ressource'     : event['SUBJECT']
             })
 
-        return pd.DataFrame(event_log)
+        return pd.DataFrame(activity_log)
 
-    def __export(self, event_log, format: str = 'png') -> str:
+    def __export(self, activity_log, format: str = 'png') -> str:
         path = '/src/static/assets'
         if format == 'bpmn':
             file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.bpmn')
-            tree = pm4py.discover_process_tree_inductive(event_log)
+            tree = pm4py.discover_process_tree_inductive(activity_log)
             bpmn_graph = pm4py.objects.conversion.process_tree.converter.apply(tree, variant=pm4py.objects.conversion.process_tree.converter.Variants.TO_BPMN)
             pm4py.write_bpmn(bpmn_graph, file, enable_layout=True)
         elif format == 'xes':
             file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.xes')
-            pm4py.write_xes(event_log, file)
+            pm4py.write_xes(activity_log, file)
         else:
             file = os.path.relpath(os.getcwd() + f'{path}/images/process.png')
-            process_tree = pm4py.discover_tree_inductive(event_log)
+            process_tree = pm4py.discover_tree_inductive(activity_log)
             bpmn_model = pm4py.convert_to_bpmn(process_tree)
             pm4py.save_vis_bpmn(bpmn_model,file)
 
