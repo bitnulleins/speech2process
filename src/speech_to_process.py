@@ -13,7 +13,7 @@ nlp = spacy.load('de_core_news_sm')
 r = sr.Recognizer()
 r.energy_threshold = 300
 
-AUDIO_DIR = './audio'
+AUDIO_DIR = '../audio'
 
 class Speech2Process():
     """
