@@ -16,13 +16,23 @@ Get project by:
 
 ### Dependencies
 
-You need some python libraries: [requirments.txt](./requirements.txt)
+You need **Python** and some Python libraries: [requirments.txt](./requirements.txt)
 
 ```pip install -r requirments.txt```
 
 ### PM4PY
 
-Read the [installation manual](https://pm4py.fit.fraunhofer.de/install) to install PM4PY on your machine. If you've an ARM processor, try [these](https://pm4py.fit.fraunhofer.de/install-page#linux-ARM) manual.
+Read the [installation manual](https://pm4py.fit.fraunhofer.de/install) to install PM4PY on your machine. 
+
+**Problems with pm4py and *CVXOPT*?**
+
+I also had, but CVXOPT is not necessary. Try the manually [Linux ARM](https://pm4py.fit.fraunhofer.de/install-page#linux-ARM) instructions:
+1. Make sure you have a C/C++ compiler ```gcc -v```
+2. Install all needed pm4py Python library (if not already installed):
+```
+sudo pip3 install pyvis graphviz pydotplus pytz intervaltree deprecation tqdm stringdist pyemd jsonpickle sympy pandas==0.25.3
+```
+3. Install pm4py without dependencies (and without CVXOPT): ```pip3 install --no-deps pm4py```
 
 ### Install 'flac' libaries
 
@@ -39,6 +49,10 @@ On MacOS (via brew)
 To generate BPMN model PNG, it requires:
 
 ```sudo apt-get install graphviz```
+
+Check if graphviz works or is already installed:
+
+```dot -h```
 
 On MacOS (via brew):
 
@@ -58,24 +72,10 @@ For german package:
 
 ### Local
 
-* Production: ```python ./src/wsgi.py```
-* Development ```python ./src/app.py```
+1. Switch to src directoy: ```cd ./src```
+2. Run: ```python wsgi.py```
 
-### Heroku
-
-First download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-
-Create an app on Heroku, which prepares Heroku to receive your source code:
-
-```heroku create speechtoprocess```
-
-And then
-
-```heroku open```
-
-Then url of the deployed service should be:
-
-https://speechtoprocess.herokuapp.com/
+Run app.py instead for debug mode.
 
 ## Research paper
 
