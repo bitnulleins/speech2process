@@ -34,6 +34,16 @@ On MacOS (via brew)
 
 ```brew install flac```
 
+### Install graphviz
+
+To generate BPMN model PNG, it requires:
+
+```sudo apt-get install graphviz```
+
+On MacOS (via brew):
+
+```brew install graphviz```
+
 ### spaCy language package
 
 To install specific language package:
