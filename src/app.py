@@ -8,6 +8,7 @@ app = Flask(__name__)
 AUDIO_DIR = os.path.abspath(os.path.dirname(__file__)) + '/../audio'
 
 def get_audio_files():
+    if not os.path.exists(AUDIO_DIR): os.makedirs(AUDIO_DIR) # Create path if not exist
     return [ f for f in os.listdir(AUDIO_DIR) if f.endswith(".wav") ]
 
 @app.route("/process/create", methods=['POST'])
