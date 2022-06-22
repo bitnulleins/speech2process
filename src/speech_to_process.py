@@ -45,7 +45,9 @@ class Speech2Process():
 
         # XES
         self.__export(activity_log, format='xes')
+        # BPMN
         self.__export(activity_log, format='bpmn')
+        # PNG
         self.__export(activity_log, format='png')
 
         
@@ -140,15 +142,24 @@ class Speech2Process():
 
     def __export(self, activity_log, format: str = 'png') -> str:
         if format == 'bpmn':
-            file = os.path.relpath(f'{ASSETS_DIR}/bpmn/process.bpmn')
+            path = f'{ASSETS_DIR}/bpmn/'
+            file = f'{path}/process.bpmn'
+            if not os.path.exists(path): os.makedirs(path) # Create path if not exist
+
             tree = pm4py.discover_process_tree_inductive(activity_log)
             bpmn_graph = pm4py.objects.conversion.process_tree.converter.apply(tree, variant=pm4py.objects.conversion.process_tree.converter.Variants.TO_BPMN)
             pm4py.write_bpmn(bpmn_graph, file, enable_layout=True)
         elif format == 'xes':
-            file = os.path.relpath(f'{ASSETS_DIR}/bpmn/process.xes')
+            path = f'{ASSETS_DIR}/bpmn/'
+            file = f'{path}/process.xes'
+            if not os.path.exists(path): os.makedirs(path) # Create path if not exist
+
             pm4py.write_xes(activity_log, file)
         else:
-            file = os.path.relpath(f'{ASSETS_DIR}/images/process.png')
+            path = f'{ASSETS_DIR}/images/'
+            file = f'{path}/process.png'
+            if not os.path.exists(path): os.makedirs(path) # Create path if not exist
+
             process_tree = pm4py.discover_tree_inductive(activity_log)
             bpmn_model = pm4py.convert_to_bpmn(process_tree)
             pm4py.save_vis_bpmn(bpmn_model,file)
