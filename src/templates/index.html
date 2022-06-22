@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Speech2Process – bitnulleins</title>
+    <meta charset="UTF-8">
+    <title>Speech Recognition in Python</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}" />
+</head>
+<body>
+    <div id="main">
+        <h1>Speech<i>2</i>Process</h1>
+        <div id="content">
+            <div class="entry">
+                <h2>Describe Process</h2>
+                <p><strong>STEP 1:</strong> Record Step-By-Step
+                <select id="encodingTypeSelect" style="display:none">
+                    <option value="wav">Waveform Audio (.wav)</option>
+                </select>
+                <div id="controls">
+                    <button id="recordButton">Record</button>
+                    <button id="stopButton" disabled>Stop</button>
+                </div>
+                <div id="formats"></div>
+                </p>
+                <p><strong>STEP 2:</strong> Review recorded steps</p>
+                <div id="recordingsList"></div>
+                <p><strong>STEP 3:</strong> Generate process</p>
+                <button id="generateButton" disabled>Generate</button>
+            </div>
+            <div class="entry">
+                <h2>Generated process</h2>
+                <div class="preview" id="bpmn">
+                </div>
+                <h2>Generated EventLog</h2>
+                <div class="preview" id="eventlog">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Speech<i>2</i>Process Beta – Source Code on <a href="https://github.com/bitnulleins/speech2process" target="_blank">Github</a>.
+        </div>
+    </div>
+
+<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+<script src="{{ url_for('static', filename='js/WebAudioRecorder.min.js') }}" ></script>
+<script src="{{ url_for('static', filename='js/app.js') }}" ></script>
+</body>
+</html>

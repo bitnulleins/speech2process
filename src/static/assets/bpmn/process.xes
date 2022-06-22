@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log xes.version="1849-2016" xes.features="nested-attributes" xmlns="http://www.xes-standard.org/">
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext" />
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
+	<string key="origin" value="csv" />
+	<trace>
+		<string key="concept:name" value="0" />
+		<event>
+			<int key="case_id" value="0" />
+			<string key="activity" value="Bedarf von Mitarbeitern melden" />
+			<date key="timestamp" value="2022-06-22T02:26:29.380385" />
+			<string key="ressource" value="Fachabteilung" />
+			<string key="concept:name" value="Bedarf von Mitarbeitern melden" />
+			<date key="time:timestamp" value="2022-06-22T02:26:29.380385" />
+			<int key="@@index" value="0" />
+		</event>
+		<event>
+			<int key="case_id" value="0" />
+			<string key="activity" value="Stellenausschreibung verfassen" />
+			<date key="timestamp" value="2022-06-22T02:26:30.380403" />
+			<string key="ressource" value="Personalabteilung" />
+			<string key="concept:name" value="Stellenausschreibung verfassen" />
+			<date key="time:timestamp" value="2022-06-22T02:26:30.380403" />
+			<int key="@@index" value="1" />
+		</event>
+		<event>
+			<int key="case_id" value="0" />
+			<string key="activity" value="Stellenausschreibungen prüfen" />
+			<date key="timestamp" value="2022-06-22T02:26:31.380404" />
+			<string key="ressource" value="Fachabteilung" />
+			<string key="concept:name" value="Stellenausschreibungen prüfen" />
+			<date key="time:timestamp" value="2022-06-22T02:26:31.380404" />
+			<int key="@@index" value="2" />
+		</event>
+		<event>
+			<int key="case_id" value="0" />
+			<string key="activity" value="Stellenausschreibung veröffentlichen" />
+			<date key="timestamp" value="2022-06-22T02:26:32.380405" />
+			<string key="ressource" value="Personalabteilung" />
+			<string key="concept:name" value="Stellenausschreibung veröffentlichen" />
+			<date key="time:timestamp" value="2022-06-22T02:26:32.380405" />
+			<int key="@@index" value="3" />
+		</event>
+		<event>
+			<int key="case_id" value="0" />
+			<string key="activity" value="Stellenausschreibung zurück geben" />
+			<date key="timestamp" value="2022-06-22T02:26:33.380406" />
+			<string key="ressource" value="Personalabteilung" />
+			<string key="concept:name" value="Stellenausschreibung zurück geben" />
+			<date key="time:timestamp" value="2022-06-22T02:26:33.380406" />
+			<int key="@@index" value="4" />
+		</event>
+		<event>
+			<int key="case_id" value="0" />
+			<string key="activity" value="Stellenausschreibung verfassen" />
+			<date key="timestamp" value="2022-06-22T02:26:34.380407" />
+			<string key="ressource" value="Personalabteilung" />
+			<string key="concept:name" value="Stellenausschreibung verfassen" />
+			<date key="time:timestamp" value="2022-06-22T02:26:34.380407" />
+			<int key="@@index" value="5" />
+		</event>
+	</trace>
+</log>

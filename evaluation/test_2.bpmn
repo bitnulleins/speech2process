@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vsn85u" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_1t56ef9" isExecutable="false">
+    <bpmn:startEvent id="Event_05beu9k">
+      <bpmn:outgoing>Flow_1tbh7jx</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_101hxus" name="Bedarf von Mitarbeitern">
+      <bpmn:incoming>Flow_1tbh7jx</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uky28j</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1tbh7jx" sourceRef="Event_05beu9k" targetRef="Activity_101hxus" />
+    <bpmn:task id="Activity_15hodr1" name="Stellenausschreibung verassen">
+      <bpmn:incoming>Flow_1uky28j</bpmn:incoming>
+      <bpmn:incoming>Flow_0efbt7k</bpmn:incoming>
+      <bpmn:outgoing>Flow_1l4ymrd</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1uky28j" sourceRef="Activity_101hxus" targetRef="Activity_15hodr1" />
+    <bpmn:task id="Activity_1tvdtph" name="Stellenausschreibung prüfen">
+      <bpmn:incoming>Flow_1l4ymrd</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lskiks</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1l4ymrd" sourceRef="Activity_15hodr1" targetRef="Activity_1tvdtph" />
+    <bpmn:exclusiveGateway id="Gateway_19rjek8">
+      <bpmn:incoming>Flow_1lskiks</bpmn:incoming>
+      <bpmn:outgoing>Flow_0n7ac5d</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1xehtmm</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1lskiks" sourceRef="Activity_1tvdtph" targetRef="Gateway_19rjek8" />
+    <bpmn:task id="Activity_1ynhirn" name="Stellenausschreibung veröffentlichen">
+      <bpmn:incoming>Flow_0n7ac5d</bpmn:incoming>
+      <bpmn:outgoing>Flow_0nsc68o</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0n7ac5d" sourceRef="Gateway_19rjek8" targetRef="Activity_1ynhirn" />
+    <bpmn:task id="Activity_1kk8ghu" name="Stellenausschreibung zurückgeben">
+      <bpmn:incoming>Flow_1xehtmm</bpmn:incoming>
+      <bpmn:outgoing>Flow_0efbt7k</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1xehtmm" sourceRef="Gateway_19rjek8" targetRef="Activity_1kk8ghu" />
+    <bpmn:sequenceFlow id="Flow_0efbt7k" sourceRef="Activity_1kk8ghu" targetRef="Activity_15hodr1" />
+    <bpmn:endEvent id="Event_1eluirw">
+      <bpmn:incoming>Flow_0nsc68o</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0nsc68o" sourceRef="Activity_1ynhirn" targetRef="Event_1eluirw" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1t56ef9">
+      <bpmndi:BPMNEdge id="Flow_1tbh7jx_di" bpmnElement="Flow_1tbh7jx">
+        <di:waypoint x="148" y="220" />
+        <di:waypoint x="220" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uky28j_di" bpmnElement="Flow_1uky28j">
+        <di:waypoint x="320" y="220" />
+        <di:waypoint x="400" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1l4ymrd_di" bpmnElement="Flow_1l4ymrd">
+        <di:waypoint x="500" y="220" />
+        <di:waypoint x="580" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lskiks_di" bpmnElement="Flow_1lskiks">
+        <di:waypoint x="680" y="220" />
+        <di:waypoint x="765" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0n7ac5d_di" bpmnElement="Flow_0n7ac5d">
+        <di:waypoint x="790" y="195" />
+        <di:waypoint x="790" y="120" />
+        <di:waypoint x="900" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xehtmm_di" bpmnElement="Flow_1xehtmm">
+        <di:waypoint x="815" y="220" />
+        <di:waypoint x="858" y="220" />
+        <di:waypoint x="858" y="250" />
+        <di:waypoint x="900" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0efbt7k_di" bpmnElement="Flow_0efbt7k">
+        <di:waypoint x="950" y="290" />
+        <di:waypoint x="950" y="380" />
+        <di:waypoint x="450" y="380" />
+        <di:waypoint x="450" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nsc68o_di" bpmnElement="Flow_0nsc68o">
+        <di:waypoint x="1000" y="120" />
+        <di:waypoint x="1092" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_05beu9k_di" bpmnElement="Event_05beu9k">
+        <dc:Bounds x="112" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_101hxus_di" bpmnElement="Activity_101hxus">
+        <dc:Bounds x="220" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15hodr1_di" bpmnElement="Activity_15hodr1">
+        <dc:Bounds x="400" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1tvdtph_di" bpmnElement="Activity_1tvdtph">
+        <dc:Bounds x="580" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_19rjek8_di" bpmnElement="Gateway_19rjek8" isMarkerVisible="true">
+        <dc:Bounds x="765" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ynhirn_di" bpmnElement="Activity_1ynhirn">
+        <dc:Bounds x="900" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1kk8ghu_di" bpmnElement="Activity_1kk8ghu">
+        <dc:Bounds x="900" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1eluirw_di" bpmnElement="Event_1eluirw">
+        <dc:Bounds x="1092" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
