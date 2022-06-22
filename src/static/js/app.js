@@ -51,7 +51,7 @@ function generateProcess() {
 		bpmnDiv.innerHTML += '<a target="_blank" href="./static/assets/bpmn/process.bpmn">Download BPMN</a>';
 
 		// Preview Eventlog
-		eventLogDiv.innerHTML = json['event_log_html']
+		eventLogDiv.innerHTML = json['activity_log_html']
 		eventLogDiv.innerHTML += '<a target="_blank" href="./static/assets/bpmn/process.xes">Download XES Log</a>';
 	}).catch((error) => {
 		console.error(error)

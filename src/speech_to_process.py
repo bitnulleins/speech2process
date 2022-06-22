@@ -47,6 +47,7 @@ class Speech2Process():
         self.__export(activity_log, format='bpmn')
         self.__export(activity_log, format='png')
 
+        
         return {
             'activity_log_html': activity_log_df.to_html(index=False, justify='left')
         }
