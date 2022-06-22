@@ -13,7 +13,8 @@ nlp = spacy.load('de_core_news_sm')
 r = sr.Recognizer()
 r.energy_threshold = 300
 
-AUDIO_DIR = '../audio'
+AUDIO_DIR = os.path.abspath(os.path.dirname(__file__))  + '/../audio'
+ASSETS_DIR = os.path.abspath(os.path.dirname(__file__))  + '/static/assets'
 
 class Speech2Process():
     """
@@ -138,17 +139,16 @@ class Speech2Process():
         return pd.DataFrame(activity_log)
 
     def __export(self, activity_log, format: str = 'png') -> str:
-        path = '/static/assets'
         if format == 'bpmn':
-            file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.bpmn')
+            file = os.path.relpath(f'{ASSETS_DIR}/bpmn/process.bpmn')
             tree = pm4py.discover_process_tree_inductive(activity_log)
             bpmn_graph = pm4py.objects.conversion.process_tree.converter.apply(tree, variant=pm4py.objects.conversion.process_tree.converter.Variants.TO_BPMN)
             pm4py.write_bpmn(bpmn_graph, file, enable_layout=True)
         elif format == 'xes':
-            file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.xes')
+            file = os.path.relpath(f'{ASSETS_DIR}/bpmn/process.xes')
             pm4py.write_xes(activity_log, file)
         else:
-            file = os.path.relpath(os.getcwd() + f'{path}/images/process.png')
+            file = os.path.relpath(f'{ASSETS_DIR}/images/process.png')
             process_tree = pm4py.discover_tree_inductive(activity_log)
             bpmn_model = pm4py.convert_to_bpmn(process_tree)
             pm4py.save_vis_bpmn(bpmn_model,file)
