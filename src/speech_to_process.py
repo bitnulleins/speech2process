@@ -137,7 +137,7 @@ class Speech2Process():
         return pd.DataFrame(activity_log)
 
     def __export(self, activity_log, format: str = 'png') -> str:
-        path = '/src/static/assets'
+        path = '/static/assets'
         if format == 'bpmn':
             file = os.path.relpath(os.getcwd() + f'{path}/bpmn/process.bpmn')
             tree = pm4py.discover_process_tree_inductive(activity_log)
