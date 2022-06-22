@@ -7,7 +7,7 @@ from speech_to_process import Speech2Process
 app = Flask(__name__)
 AUDIO_DIR = './audio'
 
-def get_audio_files() -> list[str]:
+def get_audio_files():
     return [ f for f in os.listdir(AUDIO_DIR) if f.endswith(".wav") ]
 
 @app.route("/process/create", methods=['POST'])
