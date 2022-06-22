@@ -1,5 +1,6 @@
-/assets/audio/*
-/assets/bpmn/*
+/audio/*
+/src/static/assets/bpmn/*
+/src/static/assets/images/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
