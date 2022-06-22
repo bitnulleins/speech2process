@@ -51,7 +51,7 @@ class Speech2Process():
             'activity_log_html': activity_log_df.to_html(index=False, justify='left')
         }
 
-    def __transcribe_audio(self, audio_files: list[str]):
+    def __transcribe_audio(self, audio_files):
         """
         
         """
@@ -69,7 +69,7 @@ class Speech2Process():
             raise Exception('Cant recognise any text... try again.')
         return transcribed_sentences
     
-    def __extract_infos(self, text: list[str]):
+    def __extract_infos(self, text):
         """
         
         """

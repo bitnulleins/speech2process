@@ -48,7 +48,7 @@ For german package:
 
 ### Local
 
-* Production: ```python wsgi.py```
+* Production: ```python ./src/wsgi.py```
 * Development ```python ./src/app.py```
 
 ### Heroku
