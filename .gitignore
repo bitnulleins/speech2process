@@ -2,6 +2,7 @@
 /src/static/assets/bpmn/*.xes
 /src/static/assets/bpmn/*.bpmn
 /src/static/assets/images/*
+/evaluation
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

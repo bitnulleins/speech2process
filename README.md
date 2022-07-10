@@ -13,7 +13,7 @@ Speech*2*Process is a tool to transform natural language (by text oder audio rec
 * Annotations (e.g. improvment in records)
 * New specific name 
 
-View the [Demo](#demo) screenshot and the [research paper](#research-paper).
+View the [Demo](#demo) screenshot and the [research paper](#research-paper) in german.
 
 ## Installation
 
@@ -88,7 +88,7 @@ Run app.py instead for debug mode.
 
 <img src="./demo.jpg" />
 
-## Research paper
+## Research paper (german)
 
 Coming soon...
 

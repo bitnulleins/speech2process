@@ -1,7 +1,0 @@
-        text = [
-            "Als erstes backt der Bäcker ein Brot.",
-            "Danach holt der Bäcker das Brot aus dem Ofen.",
-            "Dann prüft der Bäcker ob das Brot ok ist.",
-            "Wenn ja, dann verkauft der Bäcker das Brot.",
-            "Wenn nein, dann schmeißt der Bäcker das Brot weg und backt ein neues Brot.",
-        ]

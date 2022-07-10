@@ -1,8 +1,0 @@
-[
-    "zuerst meldet die Fachabteilung Bedarf von Mitarbeitern",
-    "dann verfasst die Personalabteilung eine Stellenausschreibung",
-    "als nächstes ehm prüft die Fachabteilung die Stellenausschreibung",
-    "wenn ok dann veröffentlicht die Personalabteilung die Stellenausschreibung",
-    "wenn nicht dann gibt die Personalabteilung die Stellenausschreibung zurück",
-    "die Personalabteilung verfasst dann eine neue Stellenausschreibung"
-]

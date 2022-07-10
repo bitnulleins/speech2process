@@ -1,6 +1,0 @@
-text = [
-    'Identifiziere Bezahlmethode des Kundens',
-    'Wenn Bezahlmethode Karte, dann führe Bezahlvorgang mit Karte durch',
-    'Wenn Bezahlmethode Rechnung, dann führe Bezahlvorgang als Rechnung durch',
-    'Bereite den Versand für den Kunden vor'.
-]
