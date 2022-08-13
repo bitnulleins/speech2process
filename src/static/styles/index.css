@@ -197,3 +197,15 @@ select {
   border-radius:0;
   margin-bottom:20px;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin:0.7em;
+  }
+  
+  #content {
+    display:block;
+  }
+}
