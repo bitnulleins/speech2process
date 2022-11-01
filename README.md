@@ -90,6 +90,16 @@ Run app.py instead for debug mode.
 
 ## Research paper (german)
 
-Coming soon...
+You can read the paper [here](./paper_speech2process.pdf) or cite it:
+
+```
+@misc{Dohrn_2022,
+  title={Speech-to-Process: Von Sprache zum Geschäftsprozess in Python},
+  url={https://github.com/bitnulleins/speech2process/raw/main/paper_speech2process.pdf},
+  author={Dohrn, Finn},
+  year={2022},
+  month={Nov}
+}
+```
 
 *Thanks to @ruslanmv for basic Flask project*
