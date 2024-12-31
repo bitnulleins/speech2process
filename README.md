@@ -15,6 +15,10 @@ Speech*2*Process is a tool to transform natural language (by text oder audio rec
 
 View the [Demo](#demo) screenshot and the [research paper](#research-paper-german) in german.
 
+## Demo
+
+<img src="./demo.jpg" />
+
 ## Installation
 
 Get project by:
@@ -83,10 +87,6 @@ For german package:
 2. Run: ```python wsgi.py```
 
 Run app.py instead for debug mode.
-
-## Demo
-
-<img src="./demo.jpg" />
 
 ## Research paper (german)
 
